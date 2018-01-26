@@ -34,7 +34,7 @@ void setup() {
   radio.setAutoAck(false);
   radio.setChannel(2);
   radio.setCRCLength(RF24_CRC_8);
-  radio.setPayloadSize(16);
+  radio.setPayloadSize(sizeof(float));
   radio.setDataRate(RF24_250KBPS);
   radio.openReadingPipe(0,address);
   radio.openReadingPipe(1,address2);
@@ -46,18 +46,13 @@ void setup() {
 
 void loop() {
 
-    uint8_t dat[16];
+    float dat;
     
     if( radio.available()){
       Serial.println("Read a thing!");                                                              // Variable for the received timestamp
       while (radio.available()) {                                   // While there is data ready
-        radio.read( dat,16 );             // Get the payload
-        int i;
-        for(i=0;i<16;i++)
-        {
-          Serial.print(dat[i]);Serial.print(',');
-        }
-        Serial.println();
+        radio.read( (void*)&dat,sizeof(float) );             // Get the payload
+        Serial.println(dat);
       }
         
     }
