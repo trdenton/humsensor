@@ -1,6 +1,9 @@
 # Humidity Sensor Solution
 
-A basic wireless humidity sensor solution.  A work in progress.  Get your PCBs at [https://www.pcbway.com/project/shareproject/W04152ASD12_humxmit_v2.html]
+A basic wireless humidity sensor solution.  A work in progress.  Get your PCBs at https://www.pcbway.com/project/shareproject/W04152ASD12_humxmit_v2.html
+
+Check out the writeup here:
+https://skullspace.ca/2017/12/23/wireless-humidity-sensor-part-1-hardware-design/
 
 ## Hardware
 
